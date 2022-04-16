@@ -33,11 +33,13 @@ app.use(Cors());
 // all routes imports
 const userRoutes = require("./routes/user");
 // Routes
+app.get("/", (req, res) => {
+  res.send("Welcome to the API by: Khan Tanveer");
+});
 app.use("/api", userRoutes);
-// app.use("/api", userRoutes);
-
+// Port
 const port = process.env.PORT || 8000;
 // Server
 app.listen(port, () => {
-  console.log(`Server started on port localhost:${port}`);
+  console.log(`Server started on port ${port}`);
 });
